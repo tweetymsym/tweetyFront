@@ -1,0 +1,48 @@
+.newtweetcard {
+  width: 40em;
+  height : 20em;
+  background: white;
+  box-shadow: 3px 3px 8px 0px rgb(0,0,0,0.35);
+  border-radius: 15px;
+  position: absolute;
+}
+
+.newtweetbutton {
+  background-color: #FFEF00;
+  position: relative;
+  left: 70%;
+  margin-right: 73%;
+  border-radius: 16px;
+  width: 155px;
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  font-family: cursive;
+}
+.newtweetbutton:hover {
+  background-color: #FFDC00;
+}
+.newtweetcontent {
+  margin-left: 15%;
+  border: none;
+  width: -webkit-fill-available;
+  height: 120px;
+  font-size: large;
+  margin-top: 10px;
+}
+.newtweetcontent:focus {
+  outline: none;
+}
+.newtweetuserinfo{
+  display: flex;
+  flex-direction: column;
+}
+.userpicture{
+  margin: 2%;
+  border-radius: 50%;
+}
+.userinfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
