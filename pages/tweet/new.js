@@ -1,4 +1,4 @@
-import NewTweetCard from "../../components/tweet/newTweetCard"
+import NewTweetCard from "/components/tweet/newTweetCard/newTweetCard"
 
 const New = () => {
     return (

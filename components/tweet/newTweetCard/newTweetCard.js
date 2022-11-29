@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '@mui/material/card'
+import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
@@ -20,6 +20,9 @@ const NewTweetCard = (props) => {
 
     const usernameprops = {
         marginLeft: 2.5,
+        fontFamily: "cursive",
+        fontSize: "larger"
+
     }
     return (
         <Card className={styles.newtweetcard}>
