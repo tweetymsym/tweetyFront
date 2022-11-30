@@ -1,6 +1,8 @@
 import TweetCard from "../../components/tweet/tweetCard/tweetCard"
 import CalculateDateDifference from "../../utils/CalculateDateDifference";
 import styles from '/styles/TweetStyle.module.css'
+import NewTweetCard from "/components/tweet/newTweetCard/newTweetCard"
+
 export default function Feed() {
     var tweetDateString = "2022-11-30 17:16:01";
     var dateToExpose = CalculateDateDifference(tweetDateString);
@@ -8,6 +10,9 @@ export default function Feed() {
     return (
         <div className={styles.page}>
             <div>
+                <NewTweetCard username = "dummy" 
+                    userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
+                />
                 <TweetCard firstname = "dummy"
                     lastname = "dummy"
                     username = "dummy" 

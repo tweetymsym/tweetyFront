@@ -45,7 +45,7 @@ const NewTweetCard = (props) => {
                     placeholder="What's up ? "
                     value={formValues.content}
                     onChange={handleChange}
-                    maxlength="280"
+                    maxLength="280"
                 />
             </CardContent>
             <CardActions>

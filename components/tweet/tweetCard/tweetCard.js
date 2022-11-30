@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
 import Image from 'next/image'
 import styles from './tweetCard.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment, faRetweet } from "@fortawesome/free-solid-svg-icons";
-import { color } from '@mui/system';
 
 
 const TweetCard = (props) => {
