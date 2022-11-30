@@ -1,0 +1,32 @@
+.tweetcard {
+    width: 50%;
+    background: white;
+    box-shadow: 3px 3px 8px 0px rgb(0,0,0,0.35);
+    border-radius: 15px;
+    position: absolute;
+    padding-bottom: 15px;
+  }
+  .tweetcontent {
+    margin-left: 12%;
+    border: none;
+    width: -webkit-fill-available;
+    height: fit-content;
+  }
+  .userpicture{
+    margin: 2%;
+    border-radius: 50%;
+  }
+  .userinfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .icons{
+    padding-left: 5px;
+  }
+  .numbers{
+    padding-left: 20%;
+  }
+  .icons:hover{
+    color: #FFEF00;
+  }
