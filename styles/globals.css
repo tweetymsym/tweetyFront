@@ -22,6 +22,12 @@ a {
   box-sizing: border-box;
 }
 
+@media only screen and (max-width: 75em){
+  .logoInLogin {
+    visibility: hidden;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
