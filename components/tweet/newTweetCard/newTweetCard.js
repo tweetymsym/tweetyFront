@@ -6,6 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Image from 'next/image'
 import styles from './newTweetCard.module.css'
+import CreateTweetRequest from '../../../api/CreateTweetRequest';
 
 const NewTweetCard = (props) => {
     const [formValues, setFormValues] = useState({content: ""})
@@ -49,7 +50,7 @@ const NewTweetCard = (props) => {
                 />
             </CardContent>
             <CardActions>
-                <Button className={styles.newtweetbutton}> Tweet </Button>
+                <Button className={styles.newtweetbutton} onClick={() => CreateTweetRequest(formValues.content)}> Tweet </Button>
             </CardActions>
         </Card>
     )
