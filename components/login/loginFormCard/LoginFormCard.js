@@ -71,7 +71,7 @@ const LoginFormCard = (props) => {
                                 <GoogleButton label='Continue with google'/>
                             </CardActions>
                         </Grid>
-                        <Divider variant="middle" className={styles.loginDevider}>You don't have an account ?</Divider>
+                        <Divider variant="middle" className={styles.loginDevider}> You don&apos;t have an account ? </Divider>
                         <Grid item>
                             <CardActions>
                                 <Button className={styles.loginButton}> Sign Up </Button>

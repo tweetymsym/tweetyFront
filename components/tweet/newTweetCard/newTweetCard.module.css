@@ -1,5 +1,6 @@
 .newtweetcard {
   width: 50%;
+  min-width: 30em;
   height : 20em;
   background: white;
   box-shadow: 3px 3px 8px 0px rgb(0,0,0,0.35);
