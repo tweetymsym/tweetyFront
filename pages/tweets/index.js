@@ -2,57 +2,37 @@ import TweetCard from "../../components/tweet/tweetCard/tweetCard"
 import CalculateDateDifference from "../../utils/CalculateDateDifference";
 import styles from '/styles/TweetStyle.module.css'
 import NewTweetCard from "/components/tweet/newTweetCard/newTweetCard"
+import { useState } from "react";
+import GetFeedRequest from "../../api/GetFeedRequest";
 
 export default function Feed() {
-    var tweetDateString = "2022-11-30 17:16:01";
-    var dateToExpose = CalculateDateDifference(tweetDateString);
+    const [tweets, setTweets] = useState({list: []})
+    GetFeedRequest(setTweets);
 
     return (
         <div className={styles.page}>
-            <div>
+            <div style={{
+                width: "100%"
+            }}>
                 <NewTweetCard username = "dummy" 
                     userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
                 />
-                <TweetCard firstname = "dummy"
-                    lastname = "dummy"
-                    username = "dummy" 
-                    userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    date = {dateToExpose}
-                    numberLikes = "5"
-                    numberComments = "1"
-                    numberRetweets = "2"
-                />
-                <TweetCard firstname = "dummy"
-                    lastname = "dummy"
-                    username = "dummy" 
-                    userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    date = {dateToExpose}
-                    numberLikes = "5"
-                    numberComments = "1"
-                    numberRetweets = "2"
-                />
-                <TweetCard firstname = "dummy"
-                    lastname = "dummy"
-                    username = "dummy" 
-                    userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    date = {dateToExpose}
-                    numberLikes = "5"
-                    numberComments = "1"
-                    numberRetweets = "2"
-                />
-                <TweetCard firstname = "dummy"
-                    lastname = "dummy"
-                    username = "dummy" 
-                    userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    date = {dateToExpose}
-                    numberLikes = "5"
-                    numberComments = "1"
-                    numberRetweets = "2"
-                    />
+                {tweets.list.map(
+                    (tweet) => (
+                        <TweetCard 
+                            key={tweet.id}
+                            firstname = "dummy"
+                            lastname = "dummy"
+                            username = {tweet.userId}
+                            userpicture = "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
+                            content = {tweet.content}
+                            date = {CalculateDateDifference(tweet.date)}
+                            numberLikes = "5"
+                            numberComments = "1"
+                            numberRetweets = "2"
+                        />
+                    )
+                )}
             </div>
         </div>
     )
