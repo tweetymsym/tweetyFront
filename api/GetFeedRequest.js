@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const CreateTweetRequest = async (content) => {
+const GetFeedRequest = async (setTweets) => {
 
     const instance = axios.create({
         baseURL: "http://10.1.6.3:8765",
@@ -8,15 +8,12 @@ const CreateTweetRequest = async (content) => {
         headers: {
           'Access-Control-Allow-Origin': "*",
           'Content-Type': 'application/json',
-          withCredentials: false
         }
     });
 
-    await instance.post('/api/tweets', {
-        content
-    }).then(result => {
-        console.log(result);
+    await instance.get('/api/tweets/test').then(result => {
+        setTweets({list: result.data})
     });
 }
 
-export default CreateTweetRequest;
+export default GetFeedRequest;
