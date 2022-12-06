@@ -1,9 +1,9 @@
-.loginCard {
+.Card {
     width: 50%;
     max-width: 70em;
     min-width: 30em;
     margin-inline: auto;
-    margin-top: 8%;
+    margin-top: 2%;
     border-radius: 2%;
     background-color:white;
     padding: 2%;
@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.loginTitle {
+.Title {
     text-align: center;
     font-size: 2em;
     line-height: "150%";
@@ -22,7 +22,7 @@
     text-shadow: "2% 2% 12% rgba(0,0,0,0.7)";
 }
 
-.loginField {
+.Field {
     margin-top: 2%;
     position: relative;
     max-width: 25em;
@@ -30,11 +30,11 @@
     min-width: 10em;
 }
 
-.loginContainer {
+.Container {
     margin-top: 3%;
 }
 
-.loginButton {
+.Button {
     background-color: #FFEF00;
     position: relative;
     border-radius: 5px;
@@ -48,11 +48,11 @@
     border: #FFEF00 .2em solid ;
 }
 
-.loginButton:hover {
+.Button:hover {
     background-color: white;
 }
 
-.loginDevider {
+.Devider {
     margin-top: 2%;
     position: relative;
     width: 60%;

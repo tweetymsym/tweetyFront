@@ -1,15 +1,15 @@
 import React from 'react';
-import LoginFormCard from '../../components/account/loginFormCard/LoginFormCard';
+import SignupFormCard from '../../components/account/signupFormCard/SignupFormCard';
 import Background from '../../components/account/background/Background';
 
 
-const Login = (props) => {
+const Signup = (props) => {
     return (
         <dev>
             <Background/>
-            <LoginFormCard/>
+            <SignupFormCard/>
         </dev>
     )
 }
 
-export default Login;
+export default Signup;
