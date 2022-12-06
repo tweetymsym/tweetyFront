@@ -6,13 +6,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-.logoInLogin {
-  position: absolute;
-  height: 8em;
-  width: 8em;
-}
-
-
 a {
   color: inherit;
   text-decoration: none;
@@ -20,12 +13,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media only screen and (max-width: 75em){
-  .logoInLogin {
-    visibility: hidden;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

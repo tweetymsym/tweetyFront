@@ -1,9 +1,9 @@
 import { Card, CardContent, Grid, Typography, CardActions, TextField , Button, Divider, Checkbox, FormControlLabel} from '@mui/material';
 import GoogleButton from 'react-google-button'
 import React, { useState } from 'react';
-import styles from './LoginFormCard.module.css'
+import styles from '../FormCard.module.css'
 
-const LoginFormCard = (props) => {
+const FormCard = (props) => {
 
     const [credentials, setCredentials] = useState({username: "", password: "", remember: false});
 
@@ -23,15 +23,15 @@ const LoginFormCard = (props) => {
     }
 
     return (
-        <Card className={styles.loginCard}>
+        <Card className={styles.Card}>
             <CardContent>
-                <Typography className={styles.loginTitle}>
+                <Typography className={styles.Title}>
                     Log In
                 </Typography>
-                <Grid container alignItems="center" justify="center" direction="column" className={styles.loginContainer}>
+                <Grid container alignItems="center" justify="center" direction="column" className={styles.Container}>
                         <Grid item>
                             <TextField
-                                className={styles.loginField}
+                                className={styles.Field}
                                 id="name-input"
                                 name="username"
                                 label="username"
@@ -42,7 +42,7 @@ const LoginFormCard = (props) => {
                         </Grid>
                         <Grid item>
                             <TextField  
-                                className={styles.loginField}
+                                className={styles.Field}
                                 id="password-input"
                                 name="password"
                                 label="password"
@@ -63,18 +63,18 @@ const LoginFormCard = (props) => {
                                 }
                                 label="Remember me"
                             />
-                            <Button className={styles.loginButton}> Login </Button>
+                            <Button className={styles.Button}> Log In </Button>
                         </div>
-                        <Divider variant="middle" className={styles.loginDevider}>Or</Divider>
+                        <Divider variant="middle" className={styles.Devider}>Or</Divider>
                         <Grid item>
                             <CardActions>
                                 <GoogleButton label='Continue with google'/>
                             </CardActions>
                         </Grid>
-                        <Divider variant="middle" className={styles.loginDevider}> You don&apos;t have an account ? </Divider>
+                        <Divider variant="middle" className={styles.Devider}> You don&apos;t have an account ? </Divider>
                         <Grid item>
                             <CardActions>
-                                <Button className={styles.loginButton}> Sign Up </Button>
+                                <Button className={styles.Button} href="/account/signup"> Sign Up </Button>
                             </CardActions>
                         </Grid>
                 </Grid>
@@ -83,4 +83,4 @@ const LoginFormCard = (props) => {
     )
 }
 
-export default LoginFormCard;
+export default FormCard;
