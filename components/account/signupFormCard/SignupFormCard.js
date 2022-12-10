@@ -2,13 +2,14 @@ import { Card, CardContent, Grid, Typography, CardActions, TextField , Button, D
 import GoogleButton from 'react-google-button'
 import React, { useState } from 'react';
 import styles from '../FormCard.module.css'
+import CreateAccountRequest from '../../../api/CreateAccountRequest';
 
 const SignupFormCard = (props) => {
 
     const [personalInfos, setPersonalInfos] = useState({
-        username: "", 
-        firstname: "",
-        lastname: "",
+        userName: "", 
+        firstName: "",
+        lastName: "",
         password: "", 
         confirmPassword: "",
         email: ""
@@ -33,10 +34,10 @@ const SignupFormCard = (props) => {
                             <TextField
                                 className={styles.Field}
                                 id="firstname-input"
-                                name="firstname"
-                                label="firstname"
+                                name="firstName"
+                                label="first name"
                                 type="text"
-                                value={personalInfos.firstname}
+                                value={personalInfos.firstName}
                                 onChange={handlePersonalInfosChange}
                             />
                         </Grid>
@@ -44,10 +45,10 @@ const SignupFormCard = (props) => {
                             <TextField
                                 className={styles.Field}
                                 id="lastname-input"
-                                name="lastname"
-                                label="lastname"
+                                name="lastName"
+                                label="last name"
                                 type="text"
-                                value={personalInfos.lastname}
+                                value={personalInfos.lastName}
                                 onChange={handlePersonalInfosChange}
                             />
                         </Grid>
@@ -55,10 +56,10 @@ const SignupFormCard = (props) => {
                             <TextField
                                 className={styles.Field}
                                 id="username-input"
-                                name="username"
+                                name="userName"
                                 label="username"
                                 type="text"
-                                value={personalInfos.username}
+                                value={personalInfos.userName}
                                 onChange={handlePersonalInfosChange}
                             />
                         </Grid>
@@ -96,7 +97,7 @@ const SignupFormCard = (props) => {
                             />
                         </Grid>
                         <Grid item>
-                            <Button className={styles.Button}> Sign up </Button>
+                            <Button className={styles.Button} onClick={() => CreateAccountRequest({...personalInfos})}> Sign up </Button>
                         </Grid>
                         <Divider variant="middle" className={styles.Devider}>Or</Divider>
                         <Grid item>
