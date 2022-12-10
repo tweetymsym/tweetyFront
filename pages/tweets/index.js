@@ -4,10 +4,16 @@ import styles from '/styles/TweetStyle.module.css'
 import NewTweetCard from "/components/tweet/newTweetCard/newTweetCard"
 import { useState } from "react";
 import GetFeedRequest from "../../api/GetFeedRequest";
+import { useEffect } from "react";
 
 export default function Feed() {
     const [tweets, setTweets] = useState({list: []})
-    GetFeedRequest(setTweets);
+
+    useEffect(
+        () => {
+            GetFeedRequest(setTweets)
+        }, [tweets.list.length]
+    );
 
     return (
         <div className={styles.page}>
