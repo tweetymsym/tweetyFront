@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NavTweet from "../../components/navTweet/NavTweet";
 import { jwt_decode, readCookie } from "../../utils/Cookies";
+import axios from 'axios';
+
 
 function following() {
   const [following, setFollowing] = useState([]);
@@ -19,15 +21,19 @@ function following() {
   }, []);
 
   const getUsers = async () => {
-    const data = await fetch(
-      `http://localhost:8089/api/follow/following/${id}`,
-      {
-        //content type is a list
-        headers: { "Content-Type": "application/json" },
+    const instance = axios.create({
+      baseURL: "http://100.91.178.59:8765",
+      withCredentials: false,
+      headers: {
+        'Access-Control-Allow-Origin': "*",
+        'Content-Type': 'application/json',
+        withCredentials: false
       }
-    );
+  });
+    let result = await instance.get(`/api/follow/following/${id}`);
+
     //convert the data to json
-    const users = await data.json();
+    const users = result.data;
     //set the users state to the users we got from the api
     // const users = [
     //   {

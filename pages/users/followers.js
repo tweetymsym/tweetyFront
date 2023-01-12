@@ -2,27 +2,24 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NavTweet from "../../components/navTweet/NavTweet";
 import { jwt_decode, readCookie } from "../../utils/Cookies";
+
 function followers() {
   const [followers, setFollowers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [id, setId] = useState("704bc8d8-4a49-437f-b73a-ab983a7b7b47");
+  const [id, setId] = useState("");
 
-  //   useEffect(() => {
-  //     //get the JWT token from the cookie
-  //     //const token = readCookie("token");
-  //     //decode the JWT token to get the user id
-  //     //const decoded = jwt_decode(token);
-  //     //get the user id from the decoded token
-  //     //  setId(decoded.id);
-  //     setId("704bc8d8-4a49-437f-b73a-ab983a7b7b47");
-  //   }, []);
+    useEffect(() => {
+      const token = readCookie("token");
+      const decoded = jwt_decode(token);
+      setId(decoded.id);
+    }, []);
 
   const getUsers = async () => {
     const data = await fetch(
-      `http://localhost:8089/api/follow/followers/${id}`,
+      `http://100.91.178.59:8765/api/follow/followers/${id}`,
       {
         //content type is a list
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", 'Access-Control-Allow-Origin': "*" },
       }
     );
     //convert the data to json

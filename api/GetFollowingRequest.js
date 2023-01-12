@@ -3,7 +3,7 @@ import axios from "axios";
 const GetFollowingRequest = async (req, res) => {
   const { id } = req.query;
   const instance = axios.create({
-    baseURL: `http://0.0.0.0:8080/api/follow`,
+    baseURL: "http://100.91.178.59:8765/api/follow",
     withCredentials: false,
     headers: {
       "Access-Control-Allow-Origin": "*",

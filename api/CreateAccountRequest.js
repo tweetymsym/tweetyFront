@@ -5,24 +5,15 @@ const CreateAccountRequest = async (personalInformation) => {
     delete personalInformation.confirmPassword;
 
     const instance = axios.create({
-        baseURL: "http://localhost:8765",
+        baseURL: "http://100.91.178.59:8765",
         withCredentials: false,
         headers: {
-          'Access-Control-Allow-Origin': "*",
           'Content-Type': 'application/json',
-          withCredentials: false
         }
     });
 
     await instance.post('/api/users', personalInformation)
-        .then(result => {
-            console.log(result);
-            window.location = '/account/login'
-        })
-        .catch((res ) => {
-            console.log(personalInformation);
-            console.log(res)
-        });
+    window.location = '/account/login'
 }
 
 export default CreateAccountRequest;

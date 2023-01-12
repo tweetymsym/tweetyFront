@@ -3,7 +3,7 @@ import axios from 'axios';
 const CreateTweetRequest = async (content) => {
 
     const instance = axios.create({
-        baseURL: "http://localhost:8765",
+        baseURL: "http://100.91.178.59:8765",
         withCredentials: false,
         headers: {
           'Access-Control-Allow-Origin': "*",

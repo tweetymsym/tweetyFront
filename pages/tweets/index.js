@@ -5,6 +5,7 @@ import NewTweetCard from "/components/tweet/newTweetCard/newTweetCard"
 import { useState } from "react";
 import GetFeedRequest from "../../api/GetFeedRequest";
 import { useEffect } from "react";
+import Navbar from "../../components/navbar/navbar";
 
 export default function Feed() {
     const [tweets, setTweets] = useState({list: []})
@@ -17,6 +18,7 @@ export default function Feed() {
 
     return (
         <div className={styles.page}>
+            <Navbar/>
             <div style={{
                 width: "100%"
             }}>

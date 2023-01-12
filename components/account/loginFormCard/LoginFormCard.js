@@ -2,10 +2,15 @@ import { Card, CardContent, Grid, Typography, CardActions, TextField , Button, D
 import GoogleButton from 'react-google-button'
 import React, { useState } from 'react';
 import styles from '../FormCard.module.css'
+import LoginRequest from '../../../api/LoginRequest';
+import { useCookies } from 'react-cookie';
 
 const FormCard = (props) => {
 
-    const [credentials, setCredentials] = useState({username: "", password: "", remember: false});
+    const [credentials, setCredentials] = useState({username: "", password: ""});
+
+    const [token, setToken] = useCookies(["token"]);
+
 
     const handleCredentialsChange = (event) => {
         const {name, value} = event.target;
@@ -15,12 +20,6 @@ const FormCard = (props) => {
         });
     }
 
-    const handleRememberMeCheckBoxChange = (event) => {
-        setCredentials({
-            ...credentials,
-            remember: !credentials.remember,
-        });
-    }
 
     return (
         <Card className={styles.Card}>
@@ -56,14 +55,12 @@ const FormCard = (props) => {
                                 className={styles.buttonCheck}
                                 control={
                                     <Checkbox 
-                                    checked={credentials.remember} 
-                                    onChange={handleRememberMeCheckBoxChange} 
                                     name="remember" 
                                     />
                                 }
                                 label="Remember me"
                             />
-                            <Button className={styles.Button}> Log In </Button>
+                            <Button className={styles.Button} onClick={() => LoginRequest({...credentials}, setToken)}> Log In </Button>
                         </div>
                         <Divider variant="middle" className={styles.Devider}>Or</Divider>
                         <Grid item>

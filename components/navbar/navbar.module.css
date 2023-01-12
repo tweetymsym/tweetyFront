@@ -1,0 +1,35 @@
+.Navbar{
+    width: 20%;
+    min-width: 15em;
+    background: white;
+    box-shadow: 3px 3px 8px 0px rgb(0,0,0,0.35);
+    border-radius: 15px;
+    padding-bottom: 15px;
+    margin: 100px 25px 15px 0px;
+}
+
+.Navitems {
+    list-style: none;
+    height: 200%;
+}
+
+.ConnectedUser{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+.logo {
+    border-radius: 50px;
+    margin: 2em;
+}
+.ConnectedUserPicture {
+    border-radius: 50px;
+    margin-right: 1em;
+    margin-left: -2em;
+}
+.navitem {
+    display: flex;
+    flex-direction: row;
+    margin-left: -2em;
+    margin-bottom: 1.5em;
+}
